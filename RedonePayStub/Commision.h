@@ -3,6 +3,7 @@
 #include <string>
 #include <iomanip>
 #include "Employee.h"
+//#include <ios>
 using namespace std;
 
 class Commissioned_Employee: public Employee
@@ -18,6 +19,7 @@ public:
 	double getNetPay();
 	void input();
 	void print();
+	void print_to_file();
 
 
 private:
@@ -64,16 +66,37 @@ double Commissioned_Employee::getNetPay() { return net_pay; }
 	//Returns net_pay
 
 void Commissioned_Employee::print() { //formated 
+	
+	
+	cout << "----------------------------------------" << endl
+		<< "           Name     " << getName() << endl
+		<< "Employee Number   " << "# " << getNum() << endl
+		<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
+		<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
+		<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
+		<< "----------------------------------------" << endl << endl;
+}
+void Commissioned_Employee::print_to_file() { //formated 
 	ofstream myfile("example.txt"); //prints to file, make display or new function?
-	
-	 myfile << "----------------------------------------" << endl
-			<< "           Name     " << getName() << endl
-			<< "Employee Number   " << "# " << getNum() << endl
-			<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
-			<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
-			<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
-			<< "----------------------------------------" << endl << endl;
-		myfile.close();
 
-	
+	//not creating file, why?
+
+
+	 myfile.open("example.txt", ios::in);
+
+	 if (myfile.fail())
+	 {
+		 cout << "Failed to write to file" << endl;
+		 exit(1);
+	 }
+
+	myfile << "----------------------------------------" << endl
+		<< "           Name     " << getName() << endl
+		<< "Employee Number   " << "# " << getNum() << endl
+		<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
+		<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
+		<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
+		<< "----------------------------------------" << endl << endl;
+	myfile.close();
+
 }

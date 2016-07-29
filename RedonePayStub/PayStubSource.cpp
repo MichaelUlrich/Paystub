@@ -18,7 +18,7 @@ int main()
 {
 	char payStubSentinel = 'y';
 	
-	int type;
+	int type; //Determines which type of employee
 	
 	while (payStubSentinel == 'y' || payStubSentinel == 'Y')
 	{
