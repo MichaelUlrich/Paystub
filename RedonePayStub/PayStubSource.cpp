@@ -47,6 +47,7 @@ int main()
 			*/
 			hourlyEmployee->input();
 			hourlyEmployee->print();
+			hourlyEmployee->print_to_file();
 			
 			delete hourlyEmployee;
 			break;
@@ -59,6 +60,7 @@ int main()
 		case 3: //commissioned 
 			commisionedEmployee->input();
 			commisionedEmployee->print();
+			commisionedEmployee->print_to_file();
 
 			delete commisionedEmployee;
 			break;

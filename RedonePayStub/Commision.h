@@ -77,12 +77,12 @@ void Commissioned_Employee::print() { //formated
 		<< "----------------------------------------" << endl << endl;
 }
 void Commissioned_Employee::print_to_file() { //formated 
-	ofstream myfile("example.txt"); //prints to file, make display or new function?
+	ofstream myfile; //prints to file, make display or new function?
 
 	//not creating file, why?
 
 
-	 myfile.open("example.txt", ios::in);
+	 myfile.open("example.txt");
 
 	 if (myfile.fail())
 	 {
@@ -90,13 +90,13 @@ void Commissioned_Employee::print_to_file() { //formated
 		 exit(1);
 	 }
 
-	myfile << "----------------------------------------" << endl
-		<< "           Name     " << getName() << endl
-		<< "Employee Number   " << "# " << getNum() << endl
-		<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
-		<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
-		<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
-		<< "----------------------------------------" << endl << endl;
+	 myfile << "----------------------------------------" << endl
+			<< "           Name     " << getName() << endl
+			<< "Employee Number   " << "# " << getNum() << endl
+			<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
+			<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
+			<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
+			<< "----------------------------------------" << endl << endl;
 	myfile.close();
 
 }
