@@ -13,6 +13,7 @@ public:
 	double getSalary();
 	void input();
 	void print();
+	void print_to_file();
 	
 
 private:
@@ -45,4 +46,18 @@ void Salary_Employee::print() { //formated
 	cout << "           Name     " << getName() << endl;
 	cout << "Employee Number   " << "# " << getNum() << endl;
 	cout << setw(15) << "Salary" << setw(5) << "$ " <<fixed << setprecision(2)  << salary << endl;
+}
+void Salary_Employee::print_to_file() { //formated
+	ofstream myfile;
+	myfile.open("example.txt", ios::app);
+	if (myfile.fail())
+	{
+		cout << "File was unable to open. Terminating program" << endl;
+		exit(1);
+	}
+
+	myfile << "----------------------------------------" << endl
+		   << "           Name     " << getName() << endl
+		   << "Employee Number   " << "# " << getNum() << endl
+		   << setw(15) << "Salary" << setw(5) << "$ " << fixed << setprecision(2) << salary << endl;
 }

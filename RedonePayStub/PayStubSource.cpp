@@ -54,6 +54,7 @@ int main()
 		case 2: //salary
 			salaryEmployee->input();
 			salaryEmployee->print();
+			salaryEmployee->print_to_file();
 
 			delete salaryEmployee;
 			break;

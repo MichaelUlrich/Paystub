@@ -58,7 +58,7 @@ void Hourly_Employee::print() { //formated
 void Hourly_Employee::print_to_file() {
 	ofstream myfile;
 
-	myfile.open("example.txt");
+	myfile.open("example.txt", ios::app);
 
 	if (myfile.fail())
 	{

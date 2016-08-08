@@ -10,15 +10,25 @@ class Commissioned_Employee: public Employee
 {
 public:
 	Commissioned_Employee();
+		//Default Constructor - Initializes commision_rate
 	~Commissioned_Employee();
+		//Default Destructor - Unused 
 	void setCommisionRate(double newRate);
+		//Assigns value to commission_rate
 	void setTotalSales(double newSales);
+		//Assigns value to total_sales
 	void setNetPay(double newPay);
+		//Assigns value to net_pay
 	double getCommisionRate();
+		//Returns commission_rate
 	double getTotalSales();
+		//Returns total_sales
 	double getNetPay();
+		//Returns net_pay
 	void input();
+
 	void print();
+
 	void print_to_file();
 
 
@@ -27,17 +37,11 @@ private:
 	double total_sales;
 	double net_pay;
 };
-
-Commissioned_Employee::Commissioned_Employee() { commision_rate = 0.0; }
-	//Default Constructor - Initializes commision_rate
-Commissioned_Employee::~Commissioned_Employee(){ /*empty*/ }
-	//Default Destructor - Unused 
+Commissioned_Employee::Commissioned_Employee() { commision_rate = 0.0; }	
+Commissioned_Employee::~Commissioned_Employee(){ /*empty*/ }	
 void Commissioned_Employee::setCommisionRate(double newRate) { commision_rate = newRate; }
-	//Assigns value to commission_rate
-void Commissioned_Employee::setTotalSales(double newSales) { total_sales = newSales; }
-	//Assigns value to total_sales
-void Commissioned_Employee::setNetPay(double newPay) { net_pay = newPay; }
-	//Assigns value to net_pay
+void Commissioned_Employee::setTotalSales(double newSales) { total_sales = newSales; }	
+void Commissioned_Employee::setNetPay(double newPay) { net_pay = newPay; }	
 void Commissioned_Employee::input()
 {
 	string name, num;
@@ -58,13 +62,9 @@ void Commissioned_Employee::input()
 	this->setName(name);
 	this->setNum(num);
 }
-double Commissioned_Employee::getCommisionRate() { return commision_rate; }
-	//Returns commission_rate
+double Commissioned_Employee::getCommisionRate() { return commision_rate; }	
 double Commissioned_Employee::getTotalSales() { return total_sales; }
-	//Returns total_sales
 double Commissioned_Employee::getNetPay() { return net_pay; }
-	//Returns net_pay
-
 void Commissioned_Employee::print() { //formated 
 	
 	
@@ -79,10 +79,7 @@ void Commissioned_Employee::print() { //formated
 void Commissioned_Employee::print_to_file() { //formated 
 	ofstream myfile; //prints to file, make display or new function?
 
-	//not creating file, why?
-
-
-	 myfile.open("example.txt");
+	 myfile.open("example.txt", ios::app);
 
 	 if (myfile.fail())
 	 {
