@@ -48,12 +48,13 @@ void Hourly_Employee::input() {
 	
 }
 void Hourly_Employee::print() { //formated
-	cout << "----------------------------------------" << endl;
+	cout << "---------------------------------------------------------------" << endl;
 	cout << "           Name     " << getName() << endl;
 	cout << "Employee Number   " << "# " << getNum() << endl;
-	cout << setw(15) << "Hours" << setw(6) << hours << endl;
+	cout << setw(15) << "Hours " << setw(6) << hours << endl;
 	cout << setw(15) << "Rate" <<  setw(5) <<  fixed << setprecision(2) << "$ " <<  hourly_rate << endl;
 	cout << setw(15) << "Total Pay" << setw(5) << fixed << setprecision(2) <<"$ " << getNetPay() << endl;
+	cout << "---------------------------------------------------------------" << endl;
 }
 void Hourly_Employee::print_to_file() {
 	ofstream myfile;
@@ -66,12 +67,13 @@ void Hourly_Employee::print_to_file() {
 		exit(1);
 	}
 
-	myfile << "----------------------------------------" << endl
+	myfile << "---------------------------------------------------------------" << endl
 		<< "           Name     " << getName() << endl
 		<< "Employee Number   " << "# " << getNum() << endl
 		<< setw(15) << "Hours" << setw(6) << hours << endl
 		<< setw(15) << "Rate" << setw(5) << fixed << setprecision(2) << "$ " << hourly_rate << endl
-		<< setw(15) << "Total Pay" << setw(5) << fixed << setprecision(2) << "$ " << getNetPay() << endl;
+		<< setw(15) << "Total Pay" << setw(5) << fixed << setprecision(2) << "$ " << getNetPay() << endl
+		<< "---------------------------------------------------------------" << endl;
 	myfile.close();
 }
 void Hourly_Employee::setNetPay(int hours, double hourly_rate) { hourly_net_pay = hours * hourly_rate; }	

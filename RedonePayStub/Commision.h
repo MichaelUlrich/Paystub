@@ -68,13 +68,13 @@ double Commissioned_Employee::getNetPay() { return net_pay; }
 void Commissioned_Employee::print() { //formated 
 	
 	
-	cout << "----------------------------------------" << endl
+   cout << "---------------------------------------------------------------" << endl
 		<< "           Name     " << getName() << endl
 		<< "Employee Number   " << "# " << getNum() << endl
 		<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
 		<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
 		<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
-		<< "----------------------------------------" << endl << endl;
+	    << "---------------------------------------------------------------" << endl << endl;
 }
 void Commissioned_Employee::print_to_file() { //formated 
 	ofstream myfile; //prints to file, make display or new function?
@@ -87,13 +87,13 @@ void Commissioned_Employee::print_to_file() { //formated
 		 exit(1);
 	 }
 
-	 myfile << "----------------------------------------" << endl
+	 myfile << "---------------------------------------------------------------" << endl
 			<< "           Name     " << getName() << endl
 			<< "Employee Number   " << "# " << getNum() << endl
 			<< setw(15) << "Commission" << setw(6) << commision_rate * 100 << " %" << endl
 			<< setw(15) << "Total Sales" << setw(5) << "$ " << fixed << setprecision(2) << total_sales << endl
 			<< setw(15) << "Net Pay" << setw(5) << "$ " << fixed << setprecision(2) << net_pay << endl
-			<< "----------------------------------------" << endl << endl;
+		    << "---------------------------------------------------------------" << endl << endl;
 	myfile.close();
 
 }

@@ -22,9 +22,13 @@ int main()
 	
 	while (payStubSentinel == 'y' || payStubSentinel == 'Y')
 	{
-		cout << "(1) hourly, (2) salary:, (3) commissioned: ";
+		cout << "---------------------------------------------------------------" << endl;
+		cout << "#           Welcome to Mike's Pay-stub Generator              #" << endl;
+		cout << "# Please enter the corresponding number to your employee type #" << endl;
+		cout << "---------------------------------------------------------------" << endl;
+		cout << "(1) Hourly | (2) Salary | (3) Commissioned: ";
 		cin >> type;
-		cout << "--------------------------------------------" << endl;
+		cout << "---------------------------------------------------------------" << endl;
 		/*while (type != 1 || type != 2 || type != 3)
 		{
 			cout << "Please enter either (1) hourly, (2) salary, (3) commissioned: ";
@@ -67,9 +71,10 @@ int main()
 			break;
 		}
 
-		cout << "another?: (Y/N) ";
+		cout << "Would you like to enter another employee? : (Y/N) ";
+		
 		cin >> payStubSentinel;
-
+		cout << "---------------------------------------------------------------" << endl;
 		
 		
 	} 

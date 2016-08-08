@@ -42,10 +42,11 @@ void Salary_Employee::input() {
 	this->setNum(num);
 }
 void Salary_Employee::print() { //formated
-	cout << "----------------------------------------" << endl;
+	cout << "---------------------------------------------------------------" << endl;
 	cout << "           Name     " << getName() << endl;
 	cout << "Employee Number   " << "# " << getNum() << endl;
 	cout << setw(15) << "Salary" << setw(5) << "$ " <<fixed << setprecision(2)  << salary << endl;
+	cout << "---------------------------------------------------------------" << endl;
 }
 void Salary_Employee::print_to_file() { //formated
 	ofstream myfile;
@@ -56,8 +57,9 @@ void Salary_Employee::print_to_file() { //formated
 		exit(1);
 	}
 
-	myfile << "----------------------------------------" << endl
-		   << "           Name     " << getName() << endl
-		   << "Employee Number   " << "# " << getNum() << endl
-		   << setw(15) << "Salary" << setw(5) << "$ " << fixed << setprecision(2) << salary << endl;
+ myfile << "---------------------------------------------------------------" << endl
+		<< "           Name     " << getName() << endl
+		<< "Employee Number   " << "# " << getNum() << endl
+		<< setw(15) << "Salary" << setw(5) << "$ " << fixed << setprecision(2) << salary << endl
+		<< "---------------------------------------------------------------" << endl;
 }
